@@ -103,4 +103,8 @@ if(class_exists('Vluzrmos\Tinker\TinkerServiceProvider')) {
     $app->register('Vluzrmos\Tinker\TinkerServiceProvider');
 }
 
+$app->withEloquent();
+
+class_alias('App\Models\Book', 'Book');
+
 return $app;

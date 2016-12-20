@@ -14,3 +14,16 @@
 $app->get('/', function () use ($app) {
     return $app->version();
 });
+
+$app->group(['prefix' => 'api/v1'], function($app)
+{
+    $app->get('books','BooksController@index');
+
+    $app->get('books/{id}','BooksController@show');
+
+    $app->post('books','BooksController@create');
+
+    $app->put('books/{id}','BooksController@update');
+
+    $app->delete('books/{id}','BooksController@destroy');
+});
