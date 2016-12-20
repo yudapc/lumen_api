@@ -99,4 +99,8 @@ $app->group(['namespace' => 'App\Http\Controllers'], function ($app) {
 
 $app->register(Appzcoder\LumenRoutesList\RoutesCommandServiceProvider::class);
 
+if(class_exists('Vluzrmos\Tinker\TinkerServiceProvider')) {
+    $app->register('Vluzrmos\Tinker\TinkerServiceProvider');
+}
+
 return $app;
