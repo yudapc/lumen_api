@@ -17,7 +17,7 @@ $app->get('/', function () use ($app) {
     return $text_body;
 });
 
-$app->group(['prefix' => 'api/v1'], function($app)
+$app->group(['prefix' => 'api/v1', 'middleware' => 'oauth'], function($app)
 {
     $app->get('books','BooksController@index');
 
