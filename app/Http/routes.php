@@ -12,7 +12,9 @@
 */
 
 $app->get('/', function () use ($app) {
-    return $app->version();
+    $app_version = $app->version();
+    $text_body = "version: {$app_version} \n please goto /api/v1/books";
+    return $text_body;
 });
 
 $app->group(['prefix' => 'api/v1'], function($app)
