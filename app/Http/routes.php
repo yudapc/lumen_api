@@ -17,15 +17,25 @@ $app->get('/', function () use ($app) {
     return $text_body;
 });
 
-$app->group(['prefix' => 'api/v1', 'middleware' => 'oauth'], function($app)
-{
+$app->group(['prefix' => 'api/v1', 'middleware' => 'oauth'], function($app) {
+    // books
     $app->get('books','BooksController@index');
-
     $app->get('books/{id}','BooksController@show');
-
     $app->post('books','BooksController@create');
-
     $app->put('books/{id}','BooksController@update');
-
     $app->delete('books/{id}','BooksController@destroy');
+
+    // merchants
+    $app->get('merchants','MerchantsController@index');
+    $app->get('merchants/{id}','MerchantsController@show');
+    $app->post('merchants','MerchantsController@create');
+    $app->put('merchants/{id}','MerchantsController@update');
+    $app->delete('merchants/{id}','MerchantsController@destroy');
+
+    // stores
+    $app->get('stores','StoresController@index');
+    $app->get('stores/{id}','StoresController@show');
+    $app->post('stores','StoresController@create');
+    $app->put('stores/{id}','StoresController@update');
+    $app->delete('stores/{id}','StoresController@destroy');
 });

@@ -103,6 +103,8 @@ $app->register('Vluzrmos\Tinker\TinkerServiceProvider');
 $app->withEloquent();
 
 class_alias('App\Models\Book', 'Book');
+class_alias('App\Models\Merchant', 'Merchant');
+class_alias('App\Models\Store', 'Store');
 
 
 //
@@ -121,7 +123,6 @@ $app->routeMiddleware([
 ]);
 class_alias(\LucaDegasperi\OAuth2Server\Facades\Authorizer::class, 'Authorizer');
 // end oauth2
-
 
 
 return $app;
